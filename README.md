@@ -8,6 +8,8 @@ This application allows users to book flights or hotel rooms.
 - Spring Boot 3.x
 - PostgreSQL
 - Docker & Docker Compose
+- Caffeine for caching
+- React front end
 
 ## Getting Started
 
@@ -18,6 +20,7 @@ Build the project:
 ```
 
 ```bash
+   cd backend
   ./mvnw clean package -DskipTests
 ```
 
@@ -25,5 +28,6 @@ Build the project:
   docker-compose up --build
 ```
 
-The application along with a description of the API endpoints will be available at http://localhost:8080/swagger-ui.html
-
+To access the application go to:
+Front end: http://localhost:3000
+Swagger UI: http://localhost:8080/swagger-ui.html
