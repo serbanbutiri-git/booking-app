@@ -4,8 +4,8 @@ This application allows users to book flights or hotel rooms from an easy-to-use
 New flights and hotels can be added via APIs, while new users can be created from the user interface.
 Because the flights and hotels rarely change these lists are cached for improved performance.
 
-The whole app was created leveraging ChatGPT for defining front end components and routing, APIs, back end services, data model, dependencies and
-tests.
+The whole app was created leveraging ChatGPT for defining front end components and routing, APIs, back end services, data model, dependencies,
+as well as API tests and Playwright UI tests.
 
 ## Tech Stack
 
