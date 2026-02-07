@@ -1,5 +1,5 @@
 services:
-  db:
+  postgres:
     image: postgres:15
     container_name: postgres
     restart: always
@@ -12,18 +12,26 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  app:
-    build: .
-    container_name: booking-app
+  backend:
+    build: backend
+    container_name: booking-backend
     restart: on-failure
     depends_on:
-      - db
+      - postgres
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/booking
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/booking
       SPRING_DATASOURCE_USERNAME: booking_user
       SPRING_DATASOURCE_PASSWORD: booking_pass
     ports:
       - "8080:8080"
+
+  frontend:
+    build: ./frontend
+    container_name: booking-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
 
 volumes:
   postgres_data:
